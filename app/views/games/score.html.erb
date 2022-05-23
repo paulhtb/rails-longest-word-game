@@ -1,0 +1,18 @@
+<h1>Result</h1>
+
+<div class="result">
+  <% if @good %>
+    <% if @english%>
+      <p>Congratulation, your score for <%= @word.upcase %> is:</p>
+      <h2><%= @score %>%</h2>
+    <% else %>
+      <p><strong><%= @word.upcase %></strong> does not seem to be a valid English word..</p>
+    <% end %>
+  <% else %>
+    <p><strong><%= @word.upcase %></strong> cannot be built out of <%= @game_letters.join(", ").upcase %></p>
+  <% end %>
+</div>
+
+<div class="playagainBtn">
+  <%= link_to "Play again!", new_path %>
+</div>
